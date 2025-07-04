@@ -1,0 +1,218 @@
+.navbar {
+  max-width: 90%;
+  margin: 30px auto;
+  margin-bottom: 0%;
+  padding: 15px 25px;
+  background: linear-gradient(270deg, rgb(234, 239, 176), rgb(141, 236, 217));
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  font-family: "Fira Mono", "JetBrains Mono", "Source Code Pro", "Menlo", "Consolas", monospace;
+}
+.navbar .logo {
+  width: 100px;
+  height: auto;
+}
+.navbar .nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.navbar a {
+  text-decoration: none;
+  color: #d4b483;
+  font-size: 32px;
+  font-weight: bold;
+  cursor: pointer;
+  text-shadow: 1px 1px 2px black;
+  transition: color 0.3s ease;
+}
+.navbar a:hover {
+  color: #fff;
+}
+@media (max-width: 900px) {
+  .navbar {
+    margin: 20px 10px;
+    padding: 10px 15px;
+  }
+  .navbar .logo {
+    width: 80px;
+  }
+  .navbar .nav-list {
+    gap: 20px;
+  }
+  .navbar a {
+    font-size: 24px;
+  }
+}
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 10px;
+  }
+  .navbar .logo {
+    width: 60px;
+    margin-bottom: 15px;
+  }
+  .navbar .nav-list {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    align-items: flex-start;
+  }
+  .navbar .nav-list li {
+    width: 100%;
+  }
+  .navbar .nav-list a {
+    font-size: 20px;
+    display: block;
+    width: 100%;
+    padding: 8px 0;
+  }
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, rgb(191, 131, 211), rgb(200, 243, 200));
+  margin: 0;
+  padding: 0;
+}
+
+.chisono {
+  font-family: "Fira Mono", "JetBrains Mono", "Source Code Pro", "Menlo", "Consolas", monospace;
+  max-width: 90%;
+  margin: 30px auto;
+  padding: 20px;
+  background: linear-gradient(135deg, #e7ceac, #bc85ec);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+}
+.chisono .nome {
+  font-size: 60px;
+  font-weight: bold;
+  color: #7b5f34;
+  text-shadow: 1px 1px 2px black;
+  flex: 0 0 auto;
+  margin-left: 15%;
+  text-align: left;
+  min-width: 120px;
+}
+.chisono .fotopers {
+  flex: 0 0 auto;
+  width: 20%;
+  height: 20%;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  margin: 0 auto;
+  display: block;
+}
+.chisono .autodescrizione {
+  flex: 1 1 0;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  padding-left: auto;
+  font-size: 22px;
+  margin-right: 12%;
+  margin-left: 2%;
+}
+@media (max-width: 700px) {
+  .chisono {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+  .chisono .nome {
+    text-align: center;
+    margin-bottom: 8px;
+  }
+  .chisono .fotopers {
+    margin: 0 auto 8px auto;
+    width: 200px;
+    height: 200px;
+  }
+  .chisono .autodescrizione {
+    align-items: flex-end;
+    max-width: 100%;
+    width: 100%;
+    margin-left: 0;
+    text-align: right;
+  }
+}
+
+.login {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #d4b483, #b8e0d2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.login-container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 400px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type=text],
+input[type=password] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #d4b483;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #c0a06e;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 10px;
+  display: none;
+}
+
+/*# sourceMappingURL=style.css.map */
