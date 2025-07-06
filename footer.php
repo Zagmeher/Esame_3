@@ -3,4 +3,20 @@
   <script>
     AOS.init();
   </script>
+  <footer id="footer" class="footer">
+    <div class="containerFooter">
+      <div class="row">
+        <div class="col">
+          <p>&copy; <?php echo date("Y"); ?> Progetto Esame3. Tutti i diritti riservati.</p>
+        </div>
+        <div class="col text-end">
+          <a href="/privacy.php">Privacy</a> |
+          <a href="/contatti.php">Contatti</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
 </body>

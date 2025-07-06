@@ -9,6 +9,7 @@
     <title>Header</title>
 </head>
 <body>
+  <?php include("functions.php"); ?>
   <nav class="navbar" id="navbar">
     <a href="index.php">
       <img src="IMG/logo.png" alt="Logo" class="logo" />

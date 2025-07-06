@@ -1,6 +1,14 @@
 // Variabili
 $sfondo: linear-gradient(135deg, rgb(191, 131, 211), rgb(200, 243, 200));
 $sfondo-navbar: linear-gradient(270deg, rgb(234, 239, 176), rgb(141, 236, 217));
+$primary-color: #2c3e50;
+$secondary-color: #ecf0f1;
+$accent-color: #3498db;
+$text-color: #2c3e50;
+$text-light: #7f8c8d;
+$success-color: #27ae60;
+$error-color: #e74c3c;
+$container-bg: linear-gradient(135deg, rgb(236, 215, 130), rgb(142, 142, 234));
 
 // Navbar
 .navbar {
@@ -264,3 +272,351 @@ body {
       margin-bottom: 10px;
       display: none;
     }
+
+// Stile del container form contact-competenze
+// Mixins per responsive design
+@mixin mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 769px) and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1025px) {
+    @content;
+  }
+}
+
+// Container principale
+.containerInferiore {
+  font-family: 'Fira Mono', 'JetBrains Mono', 'Source Code Pro', 'Menlo', 'Consolas', monospace;
+  background: $container-bg;
+  padding: 25px 15px;
+  min-height: 60vh;
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  max-width: 90%;
+  margin: 30px auto;
+  border-radius: 20px;
+
+  @include mobile {
+    flex-direction: column;
+    padding: 12px 5px;
+    align-items: center;
+    margin: 20px 10px;
+    max-width: 100%;
+  }
+
+  @include tablet {
+    padding: 18px 10px;
+    margin: 25px 10px;
+  }
+}
+
+// Sezione competenze (sinistra)
+.competenze {
+  flex: 1;
+  width: 50%;
+  background-color: $primary-color;
+  color: white;
+  padding: 22px 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  @include mobile {
+    width: 100%;
+    padding: 14px 8px;
+    margin-bottom: 0;
+  }
+
+  @include tablet {
+    padding: 18px 10px;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    @include mobile {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+    }
+
+    @include tablet {
+      font-size: 1.3rem;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      background-color: rgba(255, 255, 255, 0.1);
+      margin-bottom: 8px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      border-left: 4px solid transparent;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        border-left-color: $accent-color;
+        transform: translateX(6px);
+      }
+
+      @include mobile {
+        font-size: 0.9rem;
+        padding: 7px 10px;
+        margin-bottom: 6px;
+      }
+    }
+  }
+}
+
+// Sezione contatti (destra)
+.contact-form {
+  flex: 1;
+  width: 50%;
+  background-color: $secondary-color;
+  color: $text-color;
+  padding: 22px 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @include mobile {
+    width: 100%;
+    padding: 14px 8px;
+  }
+
+  @include tablet {
+    padding: 18px 10px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 18px;
+    text-align: center;
+    font-weight: 700;
+    color: $primary-color;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    @include mobile {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+    }
+
+    @include tablet {
+      font-size: 1.3rem;
+    }
+  }
+
+  .contactForm {
+    max-width: 100%;
+
+    .form-group {
+      margin-bottom: 14px;
+
+      @include mobile {
+        margin-bottom: 10px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 600;
+        color: $text-color;
+        font-size: 0.95rem;
+
+        .required {
+          color: $error-color;
+          font-weight: bold;
+        }
+      }
+
+      input[type="text"],
+      input[type="email"],
+      textarea {
+        width: 100%;
+        padding: 8px;
+        border: 2px solid #bdc3c7;
+        border-radius: 8px;
+        font-size: 0.95rem;
+        transition: all 0.3s ease;
+        box-sizing: border-box;
+        background-color: white;
+
+        &:focus {
+          outline: none;
+          border-color: $accent-color;
+          box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+
+        &::placeholder {
+          color: $text-light;
+        }
+
+        @include mobile {
+          padding: 7px;
+          font-size: 0.85rem;
+        }
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: 70px;
+        font-family: inherit;
+      }
+    }
+
+    .submit-btn {
+      background: linear-gradient(135deg, $success-color, #2ecc71);
+      color: white;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      width: 100%;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+
+      &:hover {
+        background: linear-gradient(135deg, #2ecc71, $success-color);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+
+      @include mobile {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+// Animazioni aggiuntive
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.competenze,
+.contact-form {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+// Responsive aggiuntivo per schermi molto piccoli
+@media (max-width: 480px) {
+  .containerInferiore {
+    padding: 8px 2px;
+    margin: 10px 2px;
+  }
+
+  .competenze,
+  .contact-form {
+    padding: 10px 5px;
+  }
+
+  .competenze h3,
+  .contact-form h2 {
+    font-size: 1rem;
+  }
+}
+
+
+// footer
+.footer {
+  width: 100%;
+  background: $sfondo-navbar;
+  color: $primary-color;
+  font-family: 'Fira Mono', 'JetBrains Mono', 'Source Code Pro', 'Menlo', 'Consolas', monospace;
+  text-align: center;
+  padding: 18px 0 12px 0;
+  border-radius: 0 0 20px 20px;
+  margin: 0 auto;
+  box-shadow: 0 -2px 10px rgba(44, 62, 80, 0.08);
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  position: relative;
+
+  a {
+    color: $accent-color;
+    text-decoration: none;
+    margin: 0 8px;
+    font-weight: 600;
+    transition: color 0.2s;
+
+    &:hover {
+      color: $primary-color;
+      text-decoration: underline;
+    }
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .footer-logo {
+    width: 36px;
+    height: 36px;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+
+  @media (max-width: 700px) {
+    font-size: 0.95rem;
+    padding: 12px 0 8px 0;
+
+    .footer-content {
+      flex-direction: column;
+      gap: 6px;
+    }
+    .footer-logo {
+      width: 28px;
+      height: 28px;
+      margin-right: 6px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.85rem;
+    padding: 8px 0 6px 0;
+    border-radius: 0 0 12px 12px;
+  }
+}
+
