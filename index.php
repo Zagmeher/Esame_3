@@ -44,27 +44,20 @@
         <p class="descrizione-portfolio" data-aos="flip-up" data-aos-duration="2000">
             Qui puoi trovare alcuni dei miei progetti più significativi, che mostrano le mie competenze in programmazione e sviluppo web.
         </p>
-        <div class="progetti">
-            <div class="progetto" data-aos="flip-up" data-aos-duration="2000">
-                <h3>Progetto 1</h3>
-                <p>Descrizione del progetto 1.</p>
+            <div class="progetti">
+                <?php
+                // Richiamo la funzione per recuperare e visualizzare i dati portfolio
+                elemPortfolio(dbConnect());
+                ?>
             </div>
-            <div class="progetto" data-aos="flip-up" data-aos-duration="2000">
-                <h3>Progetto 2</h3>
-                <p>Descrizione del progetto 2.</p>
-            </div>
-            <div class="progetto" data-aos="flip-up" data-aos-duration="2000">
-                <h3>Progetto 3</h3>
-                <p>Descrizione del progetto 3.</p>
-            </div>
-        </div>
     </div>
 
         <!-- Competenze e contatti -->
-    <div class="containerInferiore" id="containerInferiore">
+    <div class="containerInferiore" id="contatti">
             <div class="competenze" data-aos="flip-right" data-aos-duration="2000">
                 <h3>Competenze</h3>
                 <ul>
+                    <?php elemCompetenze(dbConnect()); ?>
                     <li>SQL</li>
                     <li>JavaScript</li>
                     <li>Java</li>
