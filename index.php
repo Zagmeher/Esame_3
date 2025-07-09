@@ -52,70 +52,38 @@
             </div>
     </div>
 
-        <!-- Competenze e contatti -->
+        <!-- Competenze -->
     <div class="containerInferiore" id="contatti">
             <div class="competenze" data-aos="flip-right" data-aos-duration="2000">
                 <h3>Competenze</h3>
                 <ul>
                     <?php elemCompetenze(dbConnect()); ?>
-                    <li>SQL</li>
-                    <li>JavaScript</li>
-                    <li>Java</li>
-                    <li>PHP</li>
-                    <li>CSS/SCSS</li>
-                    <li>HTML</li>
                 </ul>
             </div>
+        <!-- Contatti index -->    
             <div class="contact-form"  data-aos="flip-left" data-aos-duration="2000">
-                <h2>Contatti</h2>            
-                <form class="contactForm" id="contactForm" action="#" method="POST" >
-                    <div class="form-group">
-                        <label for="nome">Nome <span class="required">*</span></label>
-                        <input type="text" id="nome" name="nome" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email <span class="required">*</span></label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="messaggio">Messaggio <span class="required">*</span></label>
-                        <textarea id="messaggio" name="messaggio" placeholder="Scrivi qui il tuo messaggio..." required></textarea>
-                    </div>
-                    
-                    <button type="submit" class="submit-btn">Invia Messaggio</button>
-                </form>
+            <h2>Contatti</h2>
+            <?php include("contact.php"); ?>
+            <form class="contactForm" id="contactForm" action="#contatti" method="POST" >
+                <div class="form-group">
+                <label for="nome">Nome <span class="required">*</span></label>
+                <input type="text" id="nome" name="nome" required>
+                </div>
+                
+                <div class="form-group">
+                <label for="email">Email <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                <label for="messaggio">Messaggio <span class="required">*</span></label>
+                <textarea id="messaggio" name="messaggio" placeholder="Scrivi qui il tuo messaggio..." required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Invia Messaggio</button>
+            </form>
             </div>
-       
-    <script>
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const nome = document.getElementById('nome').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const messaggio = document.getElementById('messaggio').value.trim();
-            
-            if (!nome || !email || !messaggio) {
-                alert('Tutti i campi sono obbligatori!');
-                return;
-            }
-            
-            // Validazione email
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                alert('Inserisci un indirizzo email valido!');
-                return;
-            }
-            
-            alert('Messaggio inviato con successo!');
-            // Qui puoi aggiungere la logica per inviare i dati al server
-            
-            // Reset del form
-            this.reset();
-        });
-    </script>
-    </div> 
+        </div>
 
 
         

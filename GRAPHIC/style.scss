@@ -284,7 +284,6 @@ body {
     }
 
 // Stile del container form contact-competenze
-// Mixins per responsive design
 @mixin mobile {
   @media (max-width: 768px) {
     @content;
@@ -433,6 +432,7 @@ body {
       font-size: 1.2rem;
       margin-bottom: 12px;
     }
+
 
     @include tablet {
       font-size: 1.3rem;

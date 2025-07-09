@@ -15,6 +15,7 @@ function dbConnect() {
     return $conn;
 }
 
+
 // Funzione di recupero e popolazione della voce portfolio
 function elemPortfolio($conn) {
     $sql = "SELECT * FROM sitopers.portfolio";
@@ -35,13 +36,32 @@ function elemPortfolio($conn) {
     }
 }
 
+// Funzione per recuperare e visualizzare le competenze e creare le barre di progresso
 function elemCompetenze($conn) {
     $sql = "SELECT * FROM sitopers.competenze";
     $result = $conn->query($sql);
 
     if ($result && $result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
-            echo "<li>" . htmlspecialchars($row['Titolo_comp']) . "</li>";
+            $titolo = htmlspecialchars($row['Titolo_comp']);
+            $val_comp = (int)$row['Val_comp'];
+            echo "<li style='margin-bottom:30px;'>";
+            echo "<span style='font-size:18px;'>{$titolo}</span>";
+            echo "<div class='progress-bar-container' style='background:#eee; border-radius:10px; width:800px; height:20px; overflow:hidden; margin-top:8px;'>";
+            echo "<div class='progress-bar' style='background:#e74c3c; width:0; height:100%; transition:width 1.5s;'></div>";
+            echo "</div>";
+            echo "<span style='font-size:14px;'>{$val_comp}%</span>";
+            echo "</li>";
+            // Script JS per animare la barra di progresso
+            echo "<script>
+                (function(){
+                    var bars = document.querySelectorAll('.progress-bar');
+                    var idx = bars.length - 1;
+                    setTimeout(function(){
+                        bars[idx].style.width = '{$val_comp}%';
+                    }, 100);
+                })();
+            </script>";
         }
     } else {
         echo "<p>Nessuna competenza trovata.</p>";
