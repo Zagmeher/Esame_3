@@ -2,10 +2,14 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    return;
+}
+
 // Importa PHPMailer
-require 'PHP_MAIL/PHPMailer.php';
-require 'PHP_MAIL/SMTP.php';
-require 'PHP_MAIL/Exception.php';
+require 'php_mail/PHPMailer.php';
+require 'php_mail/SMTP.php';
+require 'php_mail/Exception.php';
 
 // Leggi i dati dal form
 $nome = htmlspecialchars($_POST['nome']);
@@ -17,12 +21,12 @@ $mail = new PHPMailer(true);
 try {
     // Configurazione SMTP Aruba
     $mail->isSMTP();
-    $mail->Host       = 'smtp.aruba.it';
-    $mail->SMTPAuth   = true;
-    $mail->Username   = 'sender@angeloiandolo.it'; // la tua email tecnica
-    $mail->Password   = '7I19!42q;aR#';         // password casella sender
-    $mail->SMTPSecure = 'tls';
-    $mail->Port       = 587;
+    $mail->Host = 'smtps.aruba.it'; // Host SMTP di Aruba
+    $mail->SMTPAuth = true;
+    $mail->Username = 'sender@angeloiandolo.it'; // Inserisci la tua email Aruba
+    $mail->Password = '7I19!42q;aR#'; // Inserisci la password della tua email Aruba
+    $mail->SMTPSecure = 'ssl';
+    $mail->Port = 465; // Porta TLS
 
     // Mittente e destinatario
     $mail->setFrom('sender@angeloiandolo.it', 'Sito Web');

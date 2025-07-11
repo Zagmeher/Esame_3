@@ -1,14 +1,23 @@
 <?php
+
+// Attivazione anti-cache
+header("Cache-Control: no-cache, no-store, must-revalidate");
+header("Pragma: no-cache");
+header("Expires: 0");
+
+// Altre funzioni (es. dbConnect, ecc...)
+
 function dbConnect() {
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "sitopers";
+    ini_set('display_errors', 1);
+    error_reporting(E_ALL);
 
-    // Crea connessione
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    $hostname = "31.11.39.226";
+    $username = "Sql1872203";
+    $password = "Zagmeher_92!";
+    $dbname = "Sql1872203_1";
 
-    // Controlla la connessione
+    $conn = new mysqli($hostname, $username, $password, $dbname);
+
     if ($conn->connect_error) {
         die("Connessione fallita: " . $conn->connect_error);
     }
@@ -18,7 +27,7 @@ function dbConnect() {
 
 // Funzione di recupero e popolazione della voce portfolio
 function elemPortfolio($conn) {
-    $sql = "SELECT * FROM sitopers.portfolio";
+    $sql = "SELECT * FROM Sql1872203_1.portfolio";
     $result = $conn->query($sql);
     $i = 1;
 
@@ -31,14 +40,12 @@ function elemPortfolio($conn) {
             echo "</div>";
             $i++;
         }
-    } else {
-        echo "<p>Nessun progetto trovato.</p>";
     }
 }
 
 // Funzione per recuperare e visualizzare le competenze e creare le barre di progresso
 function elemCompetenze($conn) {
-    $sql = "SELECT * FROM sitopers.competenze";
+    $sql = "SELECT * FROM Sql1872203_1.competenze";
     $result = $conn->query($sql);
 
     if ($result && $result->num_rows > 0) {
@@ -67,7 +74,7 @@ function elemCompetenze($conn) {
         echo "<p>Nessuna competenza trovata.</p>";
     }
 }
-
+$conn = dbConnect();
 dbConnect();
 
 ?>

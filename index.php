@@ -4,16 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="GRAPHIC/style.css" type="text/css" rel="stylesheet"/>
+    <link href="graphic/style.css" type="text/css" rel="stylesheet" />
+    <link rel="icon" href="ia.ico" type="ia/ico" />
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>AOS.init();</script>
     <title>Index</title>
 </head>
 <body class="body">
-    <?php include("header.php"); ?> <!-- Include il file header.php per la barra di navigazione -->
-
-    <!-- Parte chi sono -->
+    <?php
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+    include("header.php"); // Include il file header.php per la barra di navigazione
+    ?>
     <div class="chisono" id="chisono">
         <h1 class="nome" data-aos="fade-right" data-aos-duration="2000">Angelo <br> Iandolo</h1>
-        <img src="IMG/Angelo.jpg" alt="fotopers" class="fotopers" id="fotopers" data-aos="flip-left" data-aos-duration="1500">
+        <img src="img/angelo.jpg" alt="fotopers" class="fotopers" id="fotopers" data-aos="flip-left" data-aos-duration="1500">
         <p class="autodescrizione" id="autodescrizione" data-aos="fade-left" data-aos-duration="1500">
             Perito informatico con una solida
             esperienza in ambito sistemistico e help
@@ -89,6 +95,9 @@
         
     
 <?php include("footer.php"); ?>
+
+</body>
+</html>
 
 
   
