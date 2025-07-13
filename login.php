@@ -1,3 +1,13 @@
+<?php
+require_once("functions.php");
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $username = isset($_POST['username']) ? $_POST['username'] : '';
+  $password = isset($_POST['password']) ? $_POST['password'] : '';
+  backendLogin($username, $password);
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -8,9 +18,12 @@
 </head>
 <body class="login">
 
+  <div class="comeback">
+    <a href="index.php">Torna alla home</a>
+  </div>
   <div class="login-container">
     <h2>Accedi</h2>
-    <form id="loginForm" action="process_login.php" method="post">
+    <form id="loginForm" action="" method="post">
       <div class="error" id="errorMsg">Per favore compila tutti i campi</div>
 
       <label for="username">Username</label>
@@ -20,22 +33,10 @@
       <input type="password" id="password" name="password" />
 
       <button type="submit">Login</button>
+
     </form>
   </div>
 
-  <script>
-    const form = document.getElementById("loginForm");
-    const errorMsg = document.getElementById("errorMsg");
 
-    form.addEventListener("submit", function (e) {
-      const username = document.getElementById("username").value.trim();
-      const password = document.getElementById("password").value.trim();
-
-      if (username === "" || password === "") {
-        e.preventDefault(); // blocca invio
-        errorMsg.style.display = "block";
-      }
-    });
-  </script>
 </body>
 </html>

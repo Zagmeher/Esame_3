@@ -4,17 +4,15 @@
     AOS.init();
   </script>
   <footer id="footer" class="footer">
-    <div class="containerFooter">
       <div class="row">
         <div class="col">
-          <p>&copy; <?php echo date("Y"); ?> Progetto Esame3. Tutti i diritti riservati.</p>
+          <p>&copy; <?php echo date("Y"); ?> Tutti i diritti riservati.</p>
         </div>
-        <div class="col text-end">
+        <div class="col_text-end">
           <a href="/privacy.php">Privacy</a> |
-          <a href="/contatti.php">Contatti</a>
+          <p class="mail">info@angeloiandolo.it</p>
         </div>
       </div>
-    </div>
   </footer>
 
 

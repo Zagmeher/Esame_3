@@ -8,10 +8,9 @@
     <link rel="icon" href="ia.ico" type="ia/ico" />
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script>AOS.init();</script>
     <title>Index</title>
 </head>
-<body class="body">
+<body class="bodyIndex">
     <?php
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
@@ -95,6 +94,7 @@
         
     
 <?php include("footer.php"); ?>
+<script>AOS.init();</script>
 
 </body>
 </html>

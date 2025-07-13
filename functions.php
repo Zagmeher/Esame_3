@@ -74,7 +74,34 @@ function elemCompetenze($conn) {
         echo "<p>Nessuna competenza trovata.</p>";
     }
 }
+
+// Funzione per il login del backend
+function backendLogin($username, $password) {
+    $conn = dbConnect();
+    $stmt = $conn->prepare("SELECT nome, password, admin FROM Sql1872203_1.utenti WHERE nome = ? AND password = ?");
+    $stmt->bind_param("ss", $username, $password);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result && $result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        if ((int)$row['admin'] === 1) {
+            session_start();
+            $_SESSION['loggedin'] = true;
+            $_SESSION['admin'] = true;
+            header("Location: backend.php");
+            exit();
+        } elseif ((int)$row['admin'] === 0) {
+            echo "<script>alert('Non sei un admin, accesso non autorizzato.');</script>";
+        }
+    } else {
+        echo "<script>alert('Credenziali errate, accesso non autorizzato.');</script>";
+    }
+
+}
+
 $conn = dbConnect();
 dbConnect();
+
 
 ?>
