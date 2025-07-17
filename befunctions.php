@@ -644,13 +644,13 @@ function updcomp() {
         </div>
     </div>
     <script>
-    function enableEditPort(id) {
+    function enableEditComp(id) {
         var row = document.getElementById("row-"+id);
         var inputs = row.querySelectorAll("input, select");
         for (var i=0; i<inputs.length; i++) {
-            if (inputs[i].name !== "updId_port") inputs[i].disabled = false;
+            if (inputs[i].name !== "updId_comp") inputs[i].disabled = false;
         }
-        document.getElementById("submitport-"+id).disabled = false;
+        document.getElementById("submitcomp-"+id).disabled = false;
     }
     </script>
     ';
