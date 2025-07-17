@@ -93,8 +93,11 @@
 
         
     
-<?php include("footer.php"); ?>
+<?php include("footer.php");
+$conn->close(); // Chiudo la connessione al database
+?>
 <script>AOS.init();</script>
+
 
 </body>
 </html>

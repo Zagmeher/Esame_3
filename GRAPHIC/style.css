@@ -2,7 +2,7 @@
   max-width: 90%;
   margin: 30px auto;
   margin-bottom: 0%;
-  padding: 15px 25px;
+  padding: 15px 45px;
   background: linear-gradient(270deg, rgb(234, 239, 176), rgb(141, 236, 217));
   border-radius: 20px;
   display: flex;
@@ -19,7 +19,7 @@
   display: flex;
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0 20px;
   gap: 30px;
   flex-wrap: wrap;
 }
@@ -38,13 +38,14 @@
 @media (max-width: 900px) {
   .navbar {
     margin: 20px 10px;
-    padding: 10px 15px;
+    padding: 10px 25px;
   }
   .navbar .logo {
     width: 80px;
   }
   .navbar .nav-list {
     gap: 20px;
+    padding: 0 10px;
   }
   .navbar a {
     font-size: 24px;
@@ -54,7 +55,7 @@
   .navbar {
     flex-direction: column;
     align-items: flex-start;
-    padding: 15px 10px;
+    padding: 15px 20px;
   }
   .navbar .logo {
     width: 60px;
@@ -65,6 +66,7 @@
     gap: 10px;
     width: 100%;
     align-items: flex-start;
+    padding: 0 10px;
   }
   .navbar .nav-list li {
     width: 100%;
@@ -103,7 +105,7 @@
   padding: 20px;
   background: url("../img/chisono.jpg") center center/cover no-repeat;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  border-radius: 20px;
+  border-radius: 100px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -122,10 +124,10 @@
 }
 .chisono .fotopers {
   flex: 0 0 auto;
-  width: 20%;
-  height: 20%;
+  width: 40%;
+  height: 40%;
   object-fit: cover;
-  border-radius: 50%;
+  border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
   margin: 0 auto;
   display: block;
@@ -966,13 +968,17 @@ button:hover {
   }
 }
 
+.backend {
+  background-color: rgb(171, 171, 171);
+}
+
 .beTitle {
   font-size: 2.5rem;
-  color: #c13e51;
+  color: red;
   text-align: center;
   margin-bottom: 20px;
   font-weight: bold;
-  text-shadow: 1px 1px 2px black;
+  font-family: "Fira Mono", "JetBrains Mono", "Source Code Pro", "Menlo", "Consolas", monospace;
 }
 @media (max-width: 700px) {
   .beTitle {
@@ -980,113 +986,152 @@ button:hover {
     margin-bottom: 15px;
   }
 }
-@media (max-width: 500px) {
-  .beTitle {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-  }
-}
 
 .backend-container {
   display: flex;
-  justify-content: center;
-  align-items: stretch;
-  gap: 24px;
+  gap: 32px;
   max-width: 90%;
-  margin: 30px auto;
-  padding: 24px 12px;
-  background: linear-gradient(135deg, #ecca97 10%, #89f1ed 90%);
-  border-radius: 20px;
-  box-shadow: 0 4px 16px rgba(44, 62, 80, 0.1);
+  margin: 40px auto;
+  padding: 32px 24px;
+  background: linear-gradient(135deg, #ecca97 60%, #89f1ed 100%);
+  border-radius: 24px;
+  box-shadow: 0 6px 24px rgba(44, 62, 80, 0.13);
+  font-family: "Fira Mono", "JetBrains Mono", "Source Code Pro", "Menlo", "Consolas", monospace;
+}
+@media (max-width: 1024px) {
+  .backend-container {
+    gap: 18px;
+    padding: 20px 10px;
+  }
 }
 @media (max-width: 900px) {
   .backend-container {
     flex-direction: column;
-    gap: 16px;
+    gap: 18px;
     padding: 16px 6px;
     max-width: 100%;
   }
 }
 
-.backend {
-  background-color: #d2c8c8;
-  font-family: "Fira Mono", "JetBrains Mono", "Source Code Pro", "Menlo", "Consolas", monospace;
-}
-
 .backend-competenze,
-.backend-utenti,
-.backend-portfolio {
+.backend-portfolio,
+.backend-utenti {
   flex: 1 1 0;
-  background: rgba(223, 223, 208, 0.85);
-  border-radius: 16px;
-  box-shadow: 0 2px 10px rgba(44, 62, 80, 0.08);
-  padding: 22px 14px;
-  margin: 0;
-  position: relative;
+  background: linear-gradient(120deg, #fffbe6 70%, #ecca97 100%);
+  border-radius: 18px;
+  box-shadow: 0 2px 10px rgba(44, 62, 80, 0.1);
+  padding: 28px 18px;
   display: flex;
   flex-direction: column;
   align-items: center;
   min-width: 0;
-  font-family: "Fira Mono", "JetBrains Mono", "Source Code Pro", "Menlo", "Consolas", monospace;
+}
+.backend-competenze h2,
+.backend-portfolio h2,
+.backend-utenti h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 18px;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 1px 1px 2px #ecca97;
+}
+.backend-competenze form,
+.backend-portfolio form,
+.backend-utenti form {
+  width: 100%;
+}
+.backend-competenze form ul,
+.backend-portfolio form ul,
+.backend-utenti form ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.backend-competenze form ul li,
+.backend-portfolio form ul li,
+.backend-utenti form ul li {
+  background: rgba(237, 192, 108, 0.13);
+  border-radius: 12px;
+  box-shadow: 0 1px 6px rgba(44, 62, 80, 0.07);
+  padding: 16px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.backend-competenze form ul li:hover,
+.backend-portfolio form ul li:hover,
+.backend-utenti form ul li:hover {
+  box-shadow: 0 4px 16px rgba(52, 152, 219, 0.13);
+  transform: translateY(-2px) scale(1.02);
+}
+.backend-competenze form ul li h3,
+.backend-portfolio form ul li h3,
+.backend-utenti form ul li h3 {
+  font-size: 1.2rem;
+  color: #3498db;
+  margin-bottom: 10px;
+  font-weight: 600;
+  text-align: center;
+}
+.backend-competenze form ul li button,
+.backend-portfolio form ul li button,
+.backend-utenti form ul li button {
+  background: linear-gradient(135deg, #3498db, #27ae60);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 1px 4px rgba(44, 62, 80, 0.09);
+}
+.backend-competenze form ul li button:hover,
+.backend-portfolio form ul li button:hover,
+.backend-utenti form ul li button:hover {
+  background: linear-gradient(135deg, #27ae60, #3498db);
+  transform: translateY(-2px) scale(1.04);
+}
+@media (max-width: 1024px) {
+  .backend-competenze,
+  .backend-portfolio,
+  .backend-utenti {
+    padding: 18px 8px;
+  }
+  .backend-competenze h2,
+  .backend-portfolio h2,
+  .backend-utenti h2 {
+    font-size: 1.5rem;
+  }
+  .backend-competenze form ul li h3,
+  .backend-portfolio form ul li h3,
+  .backend-utenti form ul li h3 {
+    font-size: 1rem;
+  }
 }
 @media (max-width: 900px) {
   .backend-competenze,
-  .backend-utenti,
-  .backend-portfolio {
-    width: 100%;
-    padding: 14px 8px;
+  .backend-portfolio,
+  .backend-utenti {
+    padding: 14px 4px;
   }
-}
-.backend-competenze h2,
-.backend-utenti h2,
-.backend-portfolio h2 {
-  font-size: 1.7rem;
-  color: #c13e51;
-  font-weight: bold;
-  margin-bottom: 16px;
-  text-align: center;
-  letter-spacing: 1px;
-  text-shadow: 1px 1px 2px #fff, 0 1px 4px rgba(193, 62, 81, 0.2);
-}
-.backend-competenze h3,
-.backend-utenti h3,
-.backend-portfolio h3 {
-  font-size: 1.2rem;
-  color: #2c3e50;
-  font-weight: 700;
-  margin-bottom: 10px;
-  text-align: center;
-  letter-spacing: 1px;
-  text-shadow: 1px 1px 2px #fff, 0 1px 4px rgba(44, 62, 80, 0.2);
-}
-.backend-competenze p,
-.backend-utenti p,
-.backend-portfolio p {
-  font-size: 1rem;
-  color: #446a6d;
-  text-align: center;
-  margin-bottom: 18px;
-}
-.backend-competenze .bck-btn,
-.backend-utenti .bck-btn,
-.backend-portfolio .bck-btn {
-  background: linear-gradient(135deg, #3498db, #27ae60);
-  color: #e0a236;
-  border: none;
-  border-radius: 8px;
-  padding: 6px 14px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  cursor: pointer;
-  margin: 0 4px;
-  transition: background 0.2s, transform 0.2s;
-  box-shadow: 0 1px 4px rgba(44, 62, 80, 0.08);
-}
-.backend-competenze .bck-btn:hover,
-.backend-utenti .bck-btn:hover,
-.backend-portfolio .bck-btn:hover {
-  background: linear-gradient(135deg, #27ae60, #3498db);
-  transform: scale(1.05);
+  .backend-competenze h2,
+  .backend-portfolio h2,
+  .backend-utenti h2 {
+    font-size: 1.2rem;
+  }
+  .backend-competenze form ul li h3,
+  .backend-portfolio form ul li h3,
+  .backend-utenti form ul li h3 {
+    font-size: 0.95rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

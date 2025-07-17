@@ -1,5 +1,6 @@
+<!-- Integrazione del file functions.php -->
 <?php require_once("functions.php"); ?>
-
+<!-- Navbar -->
 <nav class="navbar" id="navbar">
   <a href="index.php">
     <img src="img/logo.png" alt="Logo" class="logo" />

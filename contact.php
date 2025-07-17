@@ -1,4 +1,5 @@
 <?php
+// Utilizza PHPMailer per inviare email
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
